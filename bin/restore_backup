@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/bin/bash
 
 # Performs restoration of backup data.
 
@@ -19,7 +19,7 @@ fi
 mkdir -p log
 
 rsync \
-  --rsync-path="sudo rsync" \
+  --rsync-path=" rsync" \
   --perms \
   --recursive \
   --compress \
@@ -33,8 +33,8 @@ rsync \
   "$mac_os_backup_root/" /
 
 # Newsyslog
-sudo cp -p "$mac_os_backup_root/etc/newsyslog.d/alchemists.conf" "/etc/newsyslog.d"
-sudo cp -p "$mac_os_backup_root/etc/newsyslog.d/homebrew.conf" "/etc/newsyslog.d"
+ cp -p "$mac_os_backup_root/etc/newsyslog.d/alchemists.conf" "/etc/newsyslog.d"
+ cp -p "$mac_os_backup_root/etc/newsyslog.d/homebrew.conf" "/etc/newsyslog.d"
 
 # Dotfiles
 (

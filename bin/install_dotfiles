@@ -1,9 +1,9 @@
-#! /usr/bin/env bash
+#!/bin/bash
 
 # Installs Dotfiles project.
 
 if [[ -z $(cat /etc/shells | grep "$(get_homebrew_bin_root)/bash") ]]; then
-  sudo bash -c "printf '$(get_homebrew_bin_root)/bash\n' >> /etc/shells"
+   bash -c "printf '$(get_homebrew_bin_root)/bash\n' >> /etc/shells"
   chsh -s "$(get_homebrew_bin_root)/bash"
 
   rm -f "$HOME/.bash_profile"

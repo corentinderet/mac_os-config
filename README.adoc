@@ -446,7 +446,7 @@ These configurations ensure that logs are rotated every 5MB (5120KB). In order t
 configurations are valid, run:
 
 ....
-sudo newsyslog -nvv
+ newsyslog -nvv
 ....
 
 If you don’t see any errors in the output, then your configuration settings are correct.

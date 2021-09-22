@@ -1,12 +1,12 @@
-#! /usr/bin/env bash
+#!/bin/bash
 
 # Applies system and application defaults.
 
 printf "%s\n" "System - Disable boot sound effects."
-sudo nvram SystemAudioVolume=" "
+ nvram SystemAudioVolume=" "
 
 printf "%s\n" "System - Reveal IP address, hostname, OS version, etc. when clicking login window clock."
-sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+ defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 printf "%s\n" "System - Disable automatic termination of inactive apps."
 defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
@@ -43,7 +43,7 @@ printf "%s\n" "System - Automatically restart if system freezes."
 systemsetup -setrestartfreeze on
 
 printf "%s\n" "System - Disable software updates."
-sudo softwareupdate --schedule off
+ softwareupdate --schedule off
 
 printf "%s\n" "Keyboard - Automatically illuminate built-in MacBook keyboard in low light."
 defaults write com.apple.BezelServices kDim -bool true
@@ -139,7 +139,7 @@ printf "%s\n" "Finder - Allow text selection in Quick Look."
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
 printf "%s\n" "iOS Simulator - Symlink the iOS Simulator application."
-sudo ln -sf "/Applications/Xcode.app/Contents/Applications/iPhone Simulator.app" "/Applications/iOS Simulator.app"
+ ln -sf "/Applications/Xcode.app/Contents/Applications/iPhone Simulator.app" "/Applications/iOS Simulator.app"
 
 printf "%s\n" "Safari - Set home page to 'about:blank' for faster loading."
 defaults write com.apple.Safari HomePage -string "about:blank"
